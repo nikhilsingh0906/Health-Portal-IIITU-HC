@@ -1,0 +1,25 @@
+<div class="container-fluid" id="registration">
+    <h2 class="text-center">Create an Account</h2>
+    <div class="row mt-4 mb-4">
+      <div class="col-md-6 offset-md-3">
+        <form action="/register" class="shadow-lg p-4" method="POST">
+          <div class="form-group">
+            <i class="fas fa-user"></i><label for="name" class="pl-2 font-weight-bold">Name</label><input type="text"
+              class="form-control" placeholder="Name" name="name">
+          </div>
+          <div class="form-group">
+            <i class="fas fa-envelope"></i><label for="email" class="pl-2 font-weight-bold">Email</label><input type="email"
+              class="form-control" placeholder="Email" name="email">
+            <!--Add text-white below if want text color white-->
+            <small class="form-text">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <i class="fas fa-key"></i><label for="pass" class="pl-2 font-weight-bold">New
+              Password</label><input type="password" class="form-control" placeholder="Password" name="password">
+          </div>
+          <p><input type="checkbox" required name="terms"> I accept the <u>Terms and Conditions</u></p>
+          <button type="submit" class="btn btn-primary mt-5 btn-block shadow-sm font-weight-bold" name="rSignup">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
