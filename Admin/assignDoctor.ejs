@@ -1,0 +1,101 @@
+<%- include("includes/header"); -%>
+
+
+
+   <div class="col-sm-4 mb-5">
+    <!-- Main Content area start Middle -->
+    <div class="card mt-5 mx-5">
+    <div class="card-header">
+     </div>
+     <div class="card-body">
+     <h5 class="card-title">Appointment Description : </h5>
+     <p class="card-text">adhkj </p>
+     <p class="card-text">Date: 09/06/21 </p>
+     <div class="float-right">
+     <form action="" method="POST"> <input type="hidden" name="id" value=''>
+      <input type="submit" class="btn btn-primary mr-3" name="view" value="View">
+      <input type="submit" class="btn btn-secondary" name="close" value="Close"></form>
+     </div>
+     </div>
+     </div>
+  </div> <!-- Main Content area End Middle -->
+  
+  <div class="col-sm-5 mt-5 jumbotron">
+    <!-- Main Content area Start Last -->
+    <form action="" method="POST">
+      <h5 class="text-center">Assign Doctor</h5>
+      <div class="form-group">
+        <label for="patientName">Name</label>
+        <input type="text" class="form-control" id="patientName" name="patientName" value="">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="patientYear">Year</label>
+          <input type="text" class="form-control" id="patientYear" name="patientYear" value="">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="patientBranch"> Branch</label>
+          <input type="text" class="form-control" id="patientBranch" name="patientBranch" value="">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="patientID">ID</label>
+          <input type="text" class="form-control" id="patientID" name="patientID" value="" onkeypress="isInputNumber(event)">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="appointmentDesc">Description</label>
+        <input type="text" class="form-control" id="appointmentDesc" name="appointmentDesc" value="">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="symptoms">Symptoms</label>
+          <input type="text" class="form-control" id="symptoms" name="symptoms" value="">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="pastIllness">Past Allergies</label>
+          <input type="text" class="form-control" id="pastIllness" name="pastIllness" value="">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="patientEmail">Email</label>
+          <input type="email" class="form-control" id="patientEmail" name="patientEmail" value="">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="patientMobile">Mobile</label>
+          <input type="text" class="form-control" id="patientMobile" name="patientMobile" value=""
+            onkeypress="isInputNumber(event)">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="assignDoc">Assigned to Doctor</label>
+          <input type="text" class="form-control" id="assignDoc" name="assignDoc">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="appointmentDate">Date</label>
+          <input type="date" class="form-control" id="appointmentDate" name="appointmentDate">
+        </div>
+      </div>
+      <div class="float-right">
+        <button type="submit" class="btn btn-success" name="assign">Assign</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+    <!-- below msg display if required fill missing or form submitted success or failed -->
+  </div> <!-- Main Content area End Last -->
+  </div> <!-- End Row -->
+  </div> <!-- End Container -->
+  <!-- Only Number for input fields -->
+  <script>
+    function isInputNumber(evt) {
+      var ch = String.fromCharCode(evt.which);
+      if (!(/[0-9]/.test(ch))) {
+        evt.preventDefault();
+      }
+    }
+  </script>
+
+
+
+<%- include("includes/footer"); -%>
