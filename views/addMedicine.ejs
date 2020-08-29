@@ -1,0 +1,46 @@
+<%- include("includes/header"); -%>
+
+<div class="col-sm-6 mt-5  mx-3 jumbotron">
+  <h3 class="text-center">Add New Medicine</h3>
+  <form action="/addmedicine" method="POST">
+    <div class="form-group">
+      <label for="mName"> Name</label>
+      <input type="text" class="form-control" id="mName" name="mName" required>
+    </div>
+    <div class="form-group">
+      <label for="mDate">Manufacture Date</label>
+      <input type="date" class="form-control" id="mDate" name="mDate" required>
+    </div>
+    <div class="form-group">
+      <label for="eDate">Expiry Date</label>
+      <input type="date" class="form-control" id="eDate" name="eDate" required>
+    </div>
+    <div class="form-group">
+      <label for="mAva">Available</label>
+      <input type="text" class="form-control" id="mAva" name="mAva" onkeypress="isInputNumber(event)" required>
+    </div>
+    <div class="form-group">
+      <label for="mTotal">Total</label>
+      <input type="text" class="form-control" id="mTotal" name="mTotal" onkeypress="isInputNumber(event)" required>
+    </div>
+    <div class="form-group">
+      <label for="mPrice">Price</label>
+      <input type="text" class="form-control" id="mPrice" name="mPrice" onkeypress="isInputNumber(event)" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" id="msubmit" name="msubmit">Submit</button>
+      <a href="medicines" class="btn btn-secondary">Close</a>
+    </div>
+  </form>
+</div>
+<!-- Only Number for input fields -->
+<script>
+  function isInputNumber(evt) {
+    var ch = String.fromCharCode(evt.which);
+    if (!(/[0-9]/.test(ch))) {
+      evt.preventDefault();
+    }
+  }
+</script>
+
+<%- include("includes/footer"); -%>

@@ -1,0 +1,54 @@
+<%- include("includes/header"); -%>
+
+
+   <div class="col-sm-9 col-md-10 mt-5 text-center">
+  <!--Table-->
+  <p class=" bg-dark text-white p-2">Contact Requests</p>
+  <table class="table">
+  <thead>
+   <tr>
+    <th width="20%" scope="col">Name</th>
+    <th width="25%" scope="col">Subject</th>
+    <th width="20%" scope="col">E-mail</th>
+    <th width="30%" scope="col">Query</th>
+    <th width="10%" scope="col">Action</th>
+   </tr>
+  </thead>
+  <tbody>
+      <%  contactus.forEach(function(contact){ %>
+        <tr>
+            <td>
+                <%=contact.name%>
+              </td>
+            <td>
+              <%=contact.subject%>
+            </td>
+            <td>
+              <%=contact.email%>
+            </td >
+            <td>
+                <%=contact.description%>
+            </td>
+         
+          
+            
+            
+            
+   
+    <td>
+      <a href="/deletecontact/<%=contact._id%>"><input type="hidden" name="id" value=''><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></a>
+    </td><% }); %><tr>
+    <!-- <th scope="row"></th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td> 
+      <form action="" method="POST" class="d-inline"><input type="hidden" name="id" value=''><button type="submit" class="btn btn-secondary " name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></form>
+    </td>
+   </tr> -->
+  </tbody>
+ </table>
+</div>
+
+<%- include("includes/footer"); -%>

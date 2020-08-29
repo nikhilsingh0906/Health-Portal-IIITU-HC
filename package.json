@@ -16,13 +16,24 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
     "mongoose": "^5.8.4",
     "nodemailer": "^6.4.2",
     "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "connect-flash": "^0.1.1",
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilsingh0906/IIITUHC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikhilsingh0906/IIITUHC/issues"
+  },
+  "homepage": "https://github.com/nikhilsingh0906/IIITUHC#readme"
 }

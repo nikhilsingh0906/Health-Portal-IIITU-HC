@@ -37,15 +37,18 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form action="/" class="form-login" method="post">
+    <form action="/patientlogin" class="form-login" method="POST">
   <img class="mb-4" src="logo.jpg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">IIITU Health Care Centre</h1>
   <h1 class="h5 mb-3 font-weight-normal">Patient Login</h1>
   
-  <input type="email" name=remail class="top form-control" placeholder="Email address" required autofocus>
-  <input type="password" class="bottom form-control" name=password placeholder="Password" required>
-
-  <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Login</button>
+  <input type="email" name="email" class="top form-control" placeholder="Email address" required autofocus>
+   <div class="form-group">
+  <input type="password" class="bottom form-control" id="PasswordClass" name="password" placeholder="Password"  required>
+  
+</div>
+  <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Login</button><br>
+ New Member? <a href="register" style="text-decoration: underline">Sign up Here</a>
 </form>
 </body>
 </html>
