@@ -1,0 +1,50 @@
+<%- include("includes/header"); -%>
+
+
+   <div class="col-sm-9 col-md-10 mt-5 text-center">
+    <!--Table-->
+    <p class=" bg-dark text-white p-2">Medicine Details</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Manufacture Date</th>
+          <th scope="col">Expiry Date</th>
+          <th scope="col">Available</th>
+          <th scope="col">Total</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <%  medicines.forEach(function(medicine){ %>
+            <tr>
+                <td>
+                    <%=medicine.name%>
+                  </td>
+                <td>
+                  <%=medicine.manufactureDate%>
+                </td>
+                <td>
+                  <%=medicine.expiryDate%>
+                </td >
+                <td>
+                    <%=medicine.avalaible%>
+                </td>
+                <td>
+                    <%=medicine.total%>
+                </td>
+                <td>
+                    <%=medicine.price%>
+                </td>
+          <td>
+              <a href="/editmedicines/<%=medicine._id%>"> <input type="hidden" name="id" value=><button type="submit" class="btn btn-info" name="view" value="View"><i class="fas fa-pen"></i></button></a> 
+            <a href="/deletemedicines/<%=medicine._id%>"><input type="hidden" name="id" value=><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></a>
+          </td><%});%>
+        </tr>
+      </tbody>
+    </table>
+  <a class="btn btn-primary box" href="addMedicine"><i class="fas fa-plus fa-2x"></i></a>
+  </div>
+
+  <%- include("includes/footer"); -%>

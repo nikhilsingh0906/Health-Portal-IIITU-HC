@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Font Awesome CSS -->
+  <script src="https://kit.fontawesome.com/3fed036461.js" crossorigin="anonymous"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom.css">
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <title>IIITU HC</title>
+</head>
+
+<body>
+  <section id=title>
+    <!-- Start Navigation -->
+   
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary pl-2 navbar-static-top">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                IIITU Health Care Centre
+              </a>
+            
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myMenu">
+              <ul class="navbar-nav pl-5 custom-nav ml-auto">
+                <li class="nav-item"><a href="index" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#Services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#registration" class="nav-link">Registration</a></li>
+                <li class="nav-item"><a href="/patientlogin" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="#Contact" class="nav-link">Contact US</a></li>
+              </ul>
+            </div>
+          </nav> <!-- End Navigation -->
+    
+
+  <!-- Start Header Jumbotron-->
+  <header class="jumbotron back bg-primary">
+    <div class="row">
+        <div class="col-lg-6">
+        <h1 class="big-heading">Welcome to the IIIT UNA Health Care Centre.</h1>
+        <p class="font-italic">Exceptional care. Every patient. Every day.</p>
+        <a href="/patientlogin" class="btn btn-dark btn-lg top-button">Login</a>
+        <a href="#registration" class="btn btn-outline-light btn-lg top-button">SignUp</a>
+      </div>
+      <div class="col-lg-6">
+        <img class="title-image"src="images/doc.jpg">
+      </div>
+    </div>
+  </header> <!-- End Header Jumbotron -->
+  </section>
+  
+
+  <div class="container">
+    <!--Mission Vision Section-->
+    <div class="jumbotron">
+      <h3 class="text-center">MISSION and VISION</h3>
+      <h4 class="text-left">Mission</h4>
+      <p>
+        Our mission at IIIT Una Health Care Centre is to provide our patients, their families and our
+        community with extraordinary healthcare service; to ensure peace of mind through high quality,
+        compassionate treatment; and to deliver care beyond their expectations
+      </p>
+      <h4 class="text-left">Vision</h4>
+      <p>
+        IIIT Una Health Care Centre will continue to provide a continuum of high-quality, cost-effective
+        services in order to improve the health status of those we serve. In providing these services, we
+        strive to operate at the highest level of personal and business integrity.
+      </p>
+
+    </div>
+   </div>
+   <!--Mission Vision Section End-->
+
+   <!--Registration-->
+   <%- include("register"); -%>
+  <!--Registration End-->
+
+   <!-- Start Services -->
+   <div class="text-center border-bottom container-fluid" id="Services">
+    <h2>Our Services</h2>
+    <div class="row mt-4">
+      <div class="col-sm-4 mb-4">
+        <a href="#"><i class="fas fa-user-nurse fa-8x text-success"></i></a>
+        <h4 class="mt-4">Appointments With Doctors</h4>
+      </div>
+      <div class="col-sm-4 mb-4">
+        <a href="#"><i class="fas fa-medkit fa-8x text-danger"></i></a>
+        <h4 class="mt-4">Best Treatment</h4>
+      </div>
+      <div class="col-sm-4 mb-4">
+        <a href="#"><i class="fas fa-file-medical fa-8x text-info"></i></a>
+        <h4 class="mt-4">Medical Records</h4>
+      </div>
+    </div>
+  </div> <!-- End Services -->
+
+  <!-- Start From Director's Desk  -->
+  <div class="jumbotron bg-primary" id="From Director's Desk">
+    <!-- Start From Director's Desk Jumbotron -->
+    <div class="container">
+      <!-- Start From Director's Desk Container -->
+      <h2 class="text-center text-white">From Director's DeskS</h2>
+      <div class="row mt-5">
+        <div class="col-lg-3 col-sm-6">
+          <!-- Start From Director's Desk 1st Column-->
+          <div class="card shadow-lg mb-2">
+            <div class="card-body text-center">
+              <img src="images/ssk.png" class="img-fluid From Director's Desk-image">
+              <h4 class="card-title">SSK</h4>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam</p>
+            </div>
+          </div>
+        </div> <!-- End From Director's Desk 1st Column-->
+
+        <div class="col-lg-3 col-sm-6">
+          <!-- Start From Director's Desk 2nd Column-->
+          <div class="card shadow-lg mb-2">
+            <div class="card-body text-center">
+              <img src="images/ssk.png" class="img-fluid From Director's Desk-image">
+              <h4 class="card-title">SSK</h4>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam</p>
+            </div>
+          </div>
+        </div> <!-- End From Director's Desk 2nd Column-->
+
+        <div class="col-lg-3 col-sm-6">
+          <!-- Start From Director's Desk 3rd Column-->
+          <div class="card shadow-lg mb-2">
+            <div class="card-body text-center">
+              <img src="images/ssk.png" class="img-fluid From Director's Desk-image">
+              <h4 class="card-title">SSK</h4>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam</p>
+            </div>
+          </div>
+        </div> <!-- End From Director's Desk 3rd Column-->
+
+        <div class="col-lg-3 col-sm-6">
+          <!-- Start From Director's Desk 4th Column-->
+          <div class="card shadow-lg mb-2">
+            <div class="card-body text-center">
+              <img src="images/ssk.png" class="img-fluid From Director's Desk-image">
+              <h4 class="card-title">SSK</h4>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Director IIIT UNA</p>
+              <p class="card-text">Itaque illo explicabo voluptatum, saepe libero rerum, ad ducimus voluptas nesciunt debitis numquam</p>
+            </div>
+          </div>
+          </div>
+        </div> <!-- End From Director's Desk 4th Column-->
+      </div> <!-- End From Director's Desk Row-->
+    </div> <!-- End From Director's Desk Container -->
+  </div> <!-- End From Director's Desk Jumbotron -->
+  
+  <!--Start Location-->
+  <div class="container" id="Location">
+    <!--Start Location Container-->
+    <h2 class="text-center mb-4">Location</h2> <!-- Location Heading -->
+    <div class="row">
+      <!--Start Location Row-->
+    <div class="col-lg-6">
+    <!--Start Location 1st Column-->
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108623.5216306646!2d76.44599091147938!3d31.702642609879504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904d4156d1a5611%3A0x887601ec60137715!2sHealth%20Centre!5e0!3m2!1sen!2sin!4v1595950256381!5m2!1sen!2sin" allowfullscreen></iframe>
+        </div>
+    </div>  
+    <div class="col-lg-6 pl-5 add">
+        <!-- Start Location 2nd Column-->
+        <strong>Address:</strong> <br>
+        NIT Hamirpur, <br>
+        Hamirpur,<br>
+        Himachal Pradesh - 177005 <br>
+        Phone: +00000000 <br>
+        <a href="#" target="_blank">www.12345.com</a>
+      </div> <!-- End Location 2nd Column-->
+    </div> <!-- End Location Row-->
+  </div> <!-- End Location Container-->
+  <br><br>
+  <!-- End Location -->
+  <br><br>
+  <!--Contact US-->
+  <div class="container" id="Contact">
+    <h2 class="text-center">Contact US</h2>
+    <div class="row mt-4 mb-4">
+      <div class="col-md-6 offset-md-3">
+        <form action="/contactUS" method="POST">
+            <input type="text" class="form-control" name="name" placeholder="Name"><br>
+            <input type="text" class="form-control" name="subject" placeholder="Subject"><br>
+            <input type="email" class="form-control" name="email" placeholder="E-mail"><br>
+            <textarea class="form-control" name="message" placeholder="How can we help you?" style="height:150px;"></textarea><br>
+            <input class="btn btn-primary" type="submit" value="Send" name="submit"><br><br>
+           </form>
+      </div>
+    </div>
+  </div>
+  <!--Contact End-->
+
+  <!-- Start Footer-->
+  <footer class="bg-primary text-white" style="border-top:solid #23d123;">
+    <div class="container">
+      <!-- Start Footer Container -->
+      <div class="row py-3">
+          <!-- Start Footer Row -->
+          <!-- Start Footer 2nd Column -->
+           <small> Developed by Nikhil &copy; 2020.</small>
+           <small class="ml-2"><a href="adminLogin">Admin Login</a></small>
+      </div> <!-- End Footer Row -->
+    </div> <!-- End Footer Container -->
+  </footer> <!-- End Footer -->
+
+</body>
+
+</html>

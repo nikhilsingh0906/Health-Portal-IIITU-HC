@@ -1,0 +1,44 @@
+<%- include("includes/header"); -%>
+
+
+<div class="col-sm-6 mt-5  mx-3 jumbotron">
+  <h3 class="text-center">Add New Doctor</h3>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label for="docId"> ID</label>
+      <input type="text" class="form-control" id="docId" name="docId">
+    </div>
+    <div class="form-group">
+      <label for="docName">Name</label>
+      <input type="text" class="form-control" id="docName" name="docName">
+    </div>
+    <div class="form-group">
+      <label for="docSpl">Specialist</label>
+      <input type="text" class="form-control" id="docSpl" name="docSpl">
+    </div>
+    <div class="form-group">
+      <label for="docMobile">Mobile</label>
+      <input type="text" class="form-control" id="docMobile" name="docMobile" onkeypress="isInputNumber(event)">
+    </div>
+    <div class="form-group">
+      <label for="docTimings">Timings</label>
+      <input type="text" class="form-control" id="docTimings" name="docTimings">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" id="docsubmit" name="docsubmit">Submit</button>
+      <a href="doctors" class="btn btn-secondary">Close</a>
+    </div>
+  </form>
+</div>
+<!-- Only Number for input fields -->
+<script>
+  function isInputNumber(evt) {
+    var ch = String.fromCharCode(evt.which);
+    if (!(/[0-9]/.test(ch))) {
+      evt.preventDefault();
+    }
+  }
+</script>
+
+
+<%- include("includes/footer"); -%>

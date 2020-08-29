@@ -1,0 +1,41 @@
+<%- include("includes/header"); -%>
+
+
+
+   <div class="col-sm-4 mb-5">
+    <!-- Main Content area start Middle -->
+    <div class="card mt-5 mx-5">
+    <div class="card-header">
+     </div>
+     <% appointment.forEach(function(apointment){ %>
+     <div class="card-body">
+     <h5 class="card-title">Appointment Description : </h5>
+     <p class="card-text"><%=apointment.name%> </p>
+     <p class="card-text">Date:<%=apointment.date%></p>
+     <div class="float-right">
+     <!-- <form action="" method="POST"> <input type="hidden" name="id" value=''> -->
+      <!-- <input type="submit" class="btn btn-primary mr-3" name="view" value="View"> -->
+      <a href="/viewappointment/<%=apointment._id%>" class="btn btn-primary mr-3">View</a>
+      <!-- <input type="button" id="closeButton" class="btn btn-secondary" name="close" value="Close"></form> -->
+      <a href="/closeappointment/<%=apointment._id%>" class="btn btn-secondary">Close</a>
+     </div>
+     </div>
+     <%});%>
+     </div>
+   
+  </div> <!-- Main Content area End Middle -->
+ 
+  
+  <script>
+    function isInputNumber(evt) {
+      var ch = String.fromCharCode(evt.which);
+      if (!(/[0-9]/.test(ch))) {
+        evt.preventDefault();
+      }
+    }
+   
+  </script>
+
+
+
+<%- include("includes/footer"); -%>
