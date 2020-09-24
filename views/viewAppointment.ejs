@@ -56,7 +56,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="appointmentDate">Date</label>
-          <input type="date" class="form-control" id="appointmentDate" value="<%=apointment.date%>" name="appointmentDate" required>
+          <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" onchange="validateDate()" required>
         </div>
       </div>
       <div class="float-right">
@@ -76,6 +76,9 @@
         evt.preventDefault();
       }
     }
+    var today = new Date().toISOString().split('T')[0];
+  document.getElementsByName("appointmentDate")[0].setAttribute('min', today);
+
   </script>
 
 

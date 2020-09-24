@@ -16,7 +16,7 @@ let routeFunction = passport => {
   const router = express.Router();
   const resetPassword = require("../authentication/resetPassword");
   
-let globalemail;
+//let globalemail;
   router.use(bodyParser.urlencoded({ extended: false }));
   // index page
   router.route("/").all((req, res, next) => {
@@ -412,10 +412,10 @@ let globalemail;
                           console.log(err);
                         });
                       });
-                      router
-                      .route("/deletedoctor/:doctorId")
-                      .get((req, res, next) => {
-                        const requestedDoctorId = req.params.doctorId;
+          router
+            .route("/deletedoctor/:doctorId")
+                    .get((req, res, next) => {
+                    const requestedDoctorId = req.params.doctorId;
 
                       doctors.findOne({_id: requestedDoctorId}, function(err, doctor){
                         console.log(doctor);
@@ -427,19 +427,19 @@ let globalemail;
                       });
                      });
                         })
-                        router
-                        .route("/deletemedicines/:medicineId")
+            router
+                       .route("/deletemedicines/:medicineId")
                         .get((req, res, next) => {
-                          const requestedMedicineId = req.params.medicineId;
-  
-                       
-                        medicines.findByIdAndDelete(requestedMedicineId, function (err) {
-                          if(err) console.log(err);
-                          res.redirect("/medicines")
-                        });
+                        const requestedMedicineId = req.params.medicineId;
+    
+                        
+                          medicines.findByIdAndDelete(requestedMedicineId, function (err) {
+                            if(err) console.log(err);
+                            res.redirect("/medicines")
+                          });
+                              
                             
-                           
-                        });
+                          });
                      router
                      .route("/editmedicines/:medicineId")
                      .get((req,res,next)=>{
@@ -790,51 +790,51 @@ let globalemail;
       badMethod(req);
     });
 
-  router
-    .route("/reset_password")
-    .get((req, res, next) => {
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "text/html");
-      res.render("patientChangePass", {
-        success: req.flash("success"),
-        error: req.flash("error")
-      });
-    })
-    .post((req, res, next) => {
-      const email = req.body.email;
-      users
-        .findOne({ email: email })
-        .then(user => {
-          if (user) {
-            resetPassword(user, req)
-              .then(info => {
-                if (info) {
-                  console.log(info);
-                  return res.render("token", {
-                    success: req.flash("success"),
-                    error: req.flash("error"),
-                    user: user
-                  });
-                }
-              })
-              .catch(err => {
-                console.log(err);
-              });
-          } else {
-            req.flash("error", "User not found");
-            return res.redirect("patientChangePass");
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    })
-    .put((req, res, next) => {
-      badMethod(req);
-    })
-    .delete((req, res, next) => {
-      badMethod(req);
-    });
+  // router
+  //   .route("/reset_password")
+  //   .get((req, res, next) => {
+  //     res.statusCode = 200;
+  //     res.setHeader("Content-Type", "text/html");
+  //     res.render("patientChangePass", {
+  //       success: req.flash("success"),
+  //       error: req.flash("error")
+  //     });
+  //   })
+  //   .post((req, res, next) => {
+  //     const email = req.body.email;
+  //     users
+  //       .findOne({ email: email })
+  //       .then(user => {
+  //         if (user) {
+  //           resetPassword(user, req)
+  //             .then(info => {
+  //               if (info) {
+  //                 console.log(info);
+  //                 return res.render("token", {
+  //                   success: req.flash("success"),
+  //                   error: req.flash("error"),
+  //                   user: user
+  //                 });
+  //               }
+  //             })
+  //             .catch(err => {
+  //               console.log(err);
+  //             });
+  //         } else {
+  //           req.flash("error", "User not found");
+  //           return res.redirect("patientChangePass");
+  //         }
+  //       })
+  //       .catch(err => {
+  //         console.log(err);
+  //       });
+  //   })
+  //   .put((req, res, next) => {
+  //     badMethod(req);
+  //   })
+  //   .delete((req, res, next) => {
+  //     badMethod(req);
+  //   });
 
   router.route("/appointment").get((req, res, next) => {
     if (req.user) {
@@ -845,57 +845,57 @@ let globalemail;
       res.redirect("patientlogin");
     }
   });
-  router.route("/appointments").get((req, res, next) => {
-    if (req.user) {
-      res.render("appointments", {
-        user: req.user
-      });
-    } else {
-      res.redirect("adminLogin");
-    }
-  });
+  // router.route("/appointments").get((req, res, next) => {
+  //   if (req.user) {
+  //     res.render("appointments", {
+  //       user: req.user
+  //     });
+  //   } else {
+  //     res.redirect("adminLogin");
+  //   }
+  // });
 
-  router.route("/reset_password/:emailId").post((req, res, next) => {
-    let accessToken = crypto
-      .pbkdf2Sync(req.body.token, "", 1000, 64, "sha512")
-      .toString("hex");
-    users
-      .findOne({ email: req.params.emailId })
-      .then(user => {
-        if (user) {
-          if (accessToken === user.passwordResetToken) {
-            if (Date.now() < user.tokenExpiry) {
-              return res.render("newPassword", {
-                success: req.flash("success"),
-                error: req.flash("error"),
-                user: user
-              });
-            } else {
-              req.flash("error", "Token Expired");
-              return res.render("resetPassword", {
-                success: req.flash("success"),
-                error: req.flash("error")
-              });
-            }
-          } else {
-            req.flash("error", "Token doesn't match");
-            return res.render("resetPassword", {
-              success: req.flash("success"),
-              error: req.flash("error")
-            });
-          }
-        } else {
-          req.flash("error", "Something went wrong");
-          return res.render("resetPassword", {
-            success: req.flash("success"),
-            error: req.flash("error")
-          });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
+  // router.route("/reset_password/:emailId").post((req, res, next) => {
+  //   let accessToken = crypto
+  //     .pbkdf2Sync(req.body.token, "", 1000, 64, "sha512")
+  //     .toString("hex");
+  //   users
+  //     .findOne({ email: req.params.emailId })
+  //     .then(user => {
+  //       if (user) {
+  //         if (accessToken === user.passwordResetToken) {
+  //           if (Date.now() < user.tokenExpiry) {
+  //             return res.render("newPassword", {
+  //               success: req.flash("success"),
+  //               error: req.flash("error"),
+  //               user: user
+  //             });
+  //           } else {
+  //             req.flash("error", "Token Expired");
+  //             return res.render("resetPassword", {
+  //               success: req.flash("success"),
+  //               error: req.flash("error")
+  //             });
+  //           }
+  //         } else {
+  //           req.flash("error", "Token doesn't match");
+  //           return res.render("resetPassword", {
+  //             success: req.flash("success"),
+  //             error: req.flash("error")
+  //           });
+  //         }
+  //       } else {
+  //         req.flash("error", "Something went wrong");
+  //         return res.render("resetPassword", {
+  //           success: req.flash("success"),
+  //           error: req.flash("error")
+  //         });
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // });
 
   router.route("/change_password").post((req, res, next) => {
     users

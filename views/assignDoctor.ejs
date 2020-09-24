@@ -5,9 +5,10 @@
    <div class="col-sm-4 mb-5">
     <!-- Main Content area start Middle -->
     <div class="card mt-5 mx-5">
+      <% appointment.forEach(function(apointment){ %>
     <div class="card-header">
      </div>
-     <% appointment.forEach(function(apointment){ %>
+     
      <div class="card-body">
      <h5 class="card-title">Appointment Description : </h5>
      <p class="card-text"><%=apointment.name%> </p>

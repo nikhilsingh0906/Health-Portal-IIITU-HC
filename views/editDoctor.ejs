@@ -12,20 +12,20 @@
     </div> -->
     <div class="form-group">
       <label for="docName">Name</label>
-      <input type="text" class="form-control" id="docName" name="docName" value="">
+      <input type="text" class="form-control" id="docName" name="docName" value="" pattern="[a-zA-Z\s]+" oninvalid="setCustomValidity('Plz enter only Alphabets and Spaces only')" onchange="try{setCustomValidity('')}catch(e){}" required>
     </div>
     <div class="form-group">
       <label for="docSpl">Specialist</label>
-      <input type="text" class="form-control" id="docSpl" name="docSpl" value="">
+      <input type="text" class="form-control" id="docSpl" name="docSpl" value="" required>
     </div>
     <div class="form-group">
       <label for="docMobile">Mobile</label>
       <input type="text" class="form-control" id="docMobile" name="docMobile" value=""
-        onkeypress="isInputNumber(event)">
+        onkeypress="isInputNumber(event)" pattern="[5-9]{1}[0-9]{9}" required>
     </div>
     <div class="form-group">
       <label for="docTimings">Timings</label>
-      <input type="text" class="form-control" id="docTimings" name="docTimings" value="">
+      <input type="text" class="form-control" id="docTimings" name="docTimings" placeholder="For e.g. 7AM-7PM" value="" required>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary" id="docupdate" name="docupdate">Update</button>
