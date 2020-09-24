@@ -37,7 +37,11 @@ const assignDoctorSchema = mongoose.Schema({
     required: true
   },
   year: {
+<<<<<<< HEAD
     type: String,
+=======
+    type: Number,
+>>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
     required: true
   },
   date: {

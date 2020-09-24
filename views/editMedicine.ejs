@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%- include("includes/header"); -%>
 
 
@@ -47,4 +48,55 @@
 </script>
 
 
+=======
+<%- include("includes/header"); -%>
+
+
+
+
+<div class="col-sm-6 mt-5  mx-3 jumbotron">
+  <h3 class="text-center">Update Medicine Details</h3>
+  <form action="/editmedicines/<%=medicine._id%>" method="POST">
+    <div class="form-group">
+      <label for="mName">Name</label>
+      <input type="text" class="form-control" id="mName" value="<%=medicine.name%>" name="mName" value="" readonly>
+    </div>
+    <div class="form-group">
+      <label for="mDate">Manufacture Date</label>
+      <input type="date" class="form-control" id="mDate" value="<%=medicine.manufactureDate%>" name="mDate" value="" required
+    </div>
+    <div class="form-group">
+      <label for="eDate">Expiry Date</label>
+      <input type="date" class="form-control" id="eDate" value="<%=medicine.expiryDate%>" name="eDate" value="" required>
+    </div>
+    <div class="form-group">
+      <label for="mAva">Available</label>
+      <input type="text" class="form-control" id="mAva" value="<%=medicine.avalaible%>" name="mAva" value="" onkeypress="isInputNumber(event)" required>
+    </div>
+    <div class="form-group">
+      <label for="mTotal">Total</label>
+      <input type="text" class="form-control" id="mTotal" value="<%=medicine.total%>" name="mTotal" value="" onkeypress="isInputNumber(event)" required>
+    </div>
+    <div class="form-group">
+      <label for="mPrice">Price</label>
+      <input type="text" class="form-control" id="mPrice" value="<%=medicine.price%>" name="mPrice" value="" onkeypress="isInputNumber(event)"required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" id="mupdate" name="mupdate">Update</button>
+      <a href="/medicines" class="btn btn-secondary">Close</a>
+    </div>
+  </form>
+</div>
+<!-- Only Number for input fields -->
+<script>
+  function isInputNumber(evt) {
+    var ch = String.fromCharCode(evt.which);
+    if (!(/[0-9]/.test(ch))) {
+      evt.preventDefault();
+    }
+  }
+</script>
+
+
+>>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
 <%- include("includes/footer"); -%>

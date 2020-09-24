@@ -56,7 +56,11 @@
         </div>
         <div class="form-group col-md-6">
           <label for="appointmentDate">Date</label>
+<<<<<<< HEAD
           <input type="date" class="form-control" id="appointmentDate" name="appointmentDate" onchange="validateDate()" required>
+=======
+          <input type="date" class="form-control" id="appointmentDate" value="<%=apointment.date%>" name="appointmentDate" required>
+>>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
         </div>
       </div>
       <div class="float-right">
@@ -76,9 +80,12 @@
         evt.preventDefault();
       }
     }
+<<<<<<< HEAD
     var today = new Date().toISOString().split('T')[0];
   document.getElementsByName("appointmentDate")[0].setAttribute('min', today);
 
+=======
+>>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
   </script>
 
 
