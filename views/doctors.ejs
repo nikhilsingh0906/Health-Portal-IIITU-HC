@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%- include("includes/header"); -%>
 
 
@@ -50,57 +49,4 @@
 </div>
 
 
-=======
-<%- include("includes/header"); -%>
-
-
-
-<div class="col-sm-9 col-md-10 mt-5 text-center">
-  <!--Table-->
-  <p class=" bg-dark text-white p-2">List of Doctors</p>
-  <table class="table">
-  <thead>
-   <tr>
-    <th scope="col">Emp ID</th>
-    <th scope="col">Name</th>
-    <th scope="col">Specialist</th>
-    <th scope="col">Mobile</th>
-    <th scope="col">Timings</th>
-    <th scope="col">Action</th>
-   </tr>
-  </thead>
-  <tbody>
-      <%  doctors.forEach(function(doctor){ %>
-        <tr>
-            <td>
-                <%=doctor._id%>
-              </td>
-            <td>
-              <%=doctor.name%>
-            </td>
-            <td>
-              <%=doctor.specialist%>
-            </td >
-            <td>
-                <%=doctor.mobile%>
-            </td>
-            <td>
-                <%=doctor.Timings%>
-            </td>
-          
-            
-            
-            
-   
-    <td>
-      <a href="/deletedoctor/<%=doctor._id%>"><input type="hidden" name="id" value=''><button type="submit" class="btn btn-secondary" name="delete" value="Delete"><i class="far fa-trash-alt"></i></button></a>
-    </td><% }); %>
-   </tr>
-  </tbody>
- </table>
-<a class="btn btn-primary box" href="insertDoctor"><i class="fas fa-plus fa-2x"></i></a>
-</div>
-
-
->>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
 <%- include("includes/footer"); -%>

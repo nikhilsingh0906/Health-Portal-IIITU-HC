@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%- include("includes/header"); -%>
 
    <div class="col-sm-9 col-md-10">
@@ -76,83 +75,4 @@
 
 
 
-=======
-<%- include("includes/header"); -%>
-
-   <div class="col-sm-9 col-md-10">
-    <div class="row mx-5 text-center">
-      <div class="col-sm-4 mt-5">
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-          <div class="card-header">Appointments</div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <%=appointmentCount%>
-            </h4>
-            <a class="btn text-white" href="appointments">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 mt-5">
-        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-          <div class="card-header">Total Assigned</div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <%=assignDocCount%>
-            </h4>
-            <a class="btn text-white" href="assignDoctor">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 mt-5">
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-header">No. of Doctors</div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <%=doctorCount%>
-            </h4>
-            <a class="btn text-white" href="doctors">View</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mx-5 mt-5 text-center">
-      <!--Table-->
-      <p class=" bg-dark text-white p-2">List of Patients</p>
-      <table class="table">
-    <thead>
-     <tr>
-      <th scope="col">Roll Number</th>
-      <th scope="col">Email</th>
-      <th scope="col">Name</th>
-     </tr>
-    </thead>
-    <tbody>
-     <%  for(var i=0;i<rollnumberArray.length;i++){ %>
-        <%  for(var i=0;i<emailArray.length;i++){ %>
-            <%  for(var i=0;i<nameArray.length;i++){ %>
-        <tr>
-            
-            <td><%= rollnumberArray[i] %></td>
-            <td> 
-                <%= emailArray[i] %>
-            </td>
-            <td> 
-                <%= nameArray[i] %>
-            </td>
-            
-     </tr>
-          <% } %>
-             <% } %>
-                <% } %>
-   
-    </tbody>
-   </table>
-    </div>
-  </div>
-  </div>
-  </div>
-
-
-
->>>>>>> 8faabe5ef5fe79d0b3989f2c2fbac80f6c0a0529
   <%- include("includes/footer"); -%>
